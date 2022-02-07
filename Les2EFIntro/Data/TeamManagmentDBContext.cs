@@ -11,7 +11,6 @@ namespace Les2EFIntro.Data
     public class TeamManagmentDBContext : DbContext
     {
         public DbSet<Member> Members { get; set; } = null!;
-        public DbSet<Team> Teams { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             optionsBuilder.UseSqlServer(
