@@ -7,14 +7,6 @@ Console.WriteLine("Team management");
 
 using TeamManagmentDBContext teamsManagementContext = new TeamManagmentDBContext();
 
-var team1 = teamsManagementContext.Teams
-    .Include(team => team.Enrolled)
-    .FirstOrDefault(team => team.Group == "Groep-1");
-
-Console.WriteLine($"Team {team1.Title} has the following members:");
-foreach (var member in team1.Enrolled) {
-    Console.WriteLine($"\t{member.Name}");
-}
 
 #region demo creating and adding new entities:
 teamsManagementContext.Members.Add(new Member { Name = "Jeroen", Email = "jeroen@breda.nl" });
