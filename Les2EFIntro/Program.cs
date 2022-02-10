@@ -9,7 +9,7 @@ using TeamManagmentDBContext teamsManagementContext = new TeamManagmentDBContext
 
 var team1 = teamsManagementContext.Teams
      .Include(team => team.Enrolled)
-     .FirstOrDefault(team => team.Group == "Groep-1");
+     .FirstOrDefault(team => team.Group == "Groep-A");
 
 Console.WriteLine($"Team {team1.Title} has the following members:");
 foreach (var member in team1.Enrolled) {
